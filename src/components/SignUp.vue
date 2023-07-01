@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <form @submit.prevent="signUp" class="form-sign-in">
+    <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
           <label class="input-field-label">E-mail</label>
@@ -29,17 +29,6 @@
             placeholder="**********"
             id="password"
             v-model="password"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="confirmPassword"
-            v-model="confirmPassword"
             required
           />
         </div>
