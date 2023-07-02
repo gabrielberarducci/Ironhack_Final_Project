@@ -4,8 +4,6 @@
 
   <div class="container">
     <h3 class="header-title">Log In to ToDo App</h3>
-    <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p>
-
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
@@ -29,15 +27,8 @@
             v-model="password"
             required
           />
-        <button class="button" type="submit">Sign Up</button>
-        <p>
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
+        </div>
+        <button class="button" type="submit">Sign In</button>
       </div>
     </form>
 
@@ -47,17 +38,26 @@
 </template>
 
 <script setup>
+import { ref, reactive } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "../stores/user";
 
 // Route Variables
-const route = "/auth/signin";
-const buttonText = "Sign In";
+const route = "/auth/signup";
+const buttonText = "Sign Up";
 
-// Arrow function to Signin user to supaBase
-const signIn = async () => {
-  try {} catch (error) {}
-};
+// Input Fields
+const email = ref("");
+const password = ref("");
 
+// Error Message
+const errorMsg = ref("");
+
+// Router to push user once SignedUp to Log In
+const redirect = useRouter();
+
+// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signIn = async () => {
     try {
       // calls the user store and send the users info to backend to logIn
@@ -73,10 +73,8 @@ const signIn = async () => {
       }, 5000);
     }
     return;
+  }
   errorMsg.value = "error";
-};
-
-
 
 </script>
 
