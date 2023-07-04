@@ -60,8 +60,10 @@ const redirect = useRouter();
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signIn = async () => {
     try {
+      console.log("en el signin.vue antes de ir al user.js");
       // calls the user store and send the users info to backend to logIn
       await useUserStore().signIn(email.value, password.value);
+      console.log("en el signin.vue despues de ir al user.js");
       // redirects user to the homeView
       redirect.push({ path: "/" });
     } catch (error) {
