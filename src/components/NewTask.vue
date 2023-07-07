@@ -11,7 +11,7 @@
             <div class="input-field">
                 <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
             </div>
-            <button @click="addTask" class="button">Add</button>
+            <button @click="$emit(addTask)" class="button">Add</button>
         </div>
     </div>
 </template>

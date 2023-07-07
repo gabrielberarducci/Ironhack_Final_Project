@@ -31,11 +31,11 @@ const getTasks = async() => {
   tasks.value = await taskStore.fetchTasks();
 };
 
-//getTasks();
+getTasks();
 
-onUpdated(() => {
-    getTasks();
-})
+// onUpdated(() => {
+//   getTasks();
+// })
 
 </script>
 
