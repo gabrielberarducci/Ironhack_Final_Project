@@ -4,6 +4,7 @@
 
   <div class="container">
     <h3 class="header-title">Log In to ToDo App</h3>
+    
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
@@ -29,6 +30,8 @@
           />
         </div>
         <button class="button" type="submit">Sign In</button>
+
+        
       </div>
     </form>
 
@@ -38,46 +41,56 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-
+import { ref, reactive} from "vue"
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "Sign Up";
 
-// Input Fields
-const email = ref("");
-const password = ref("");
 
-// Error Message
-const errorMsg = ref("");
+// variables para conectarme al form (login)
 
-// Router to push user once SignedUp to Log In
+const email = ref("")
+const password = ref("")
+
+// Router to push user once SignedIn to Home
 const redirect = useRouter();
 
-// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
-const signIn = async () => {
-    try {
-      console.log("en el signin.vue antes de ir al user.js");
-      // calls the user store and send the users info to backend to logIn
-      await useUserStore().signIn(email.value, password.value);
-      console.log("en el signin.vue despues de ir al user.js");
-      // redirects user to the homeView
-      redirect.push({ path: "/" });
-    } catch (error) {
-      // displays error message
-      errorMsg.value = error.message;
-      // hides error message
-      setTimeout(() => {
-        errorMsg.value = null;
-      }, 5000);
-    }
-    return;
-  }
-  errorMsg.value = "error";
+// const signUp = async () => {
+//   if (password.value === confirmPassword.value) {
+//     try {
+//       // calls the user store and send the users info to backend to logIn
+//       await useUserStore().signUp(email.value, password.value);
+//       // redirects user to the homeView
+//       redirect.push({ path: "/auth/login" });
+//     } catch (error) {
+//       // displays error message
+//       errorMsg.value = error.message;
+//       // hides error message
+//       setTimeout(() => {
+//         errorMsg.value = null;
+//       }, 5000);
+//     }
+//     return;
+//   }
+//   errorMsg.value = "error";
+// };
 
+// Arrow function to Signin user to supaBase
+
+const signIn = async () => {
+  try {
+    // escribir comectario, tarea para casa.
+    await useUserStore().signIn(email.value, password.value);
+     // redirects user to the homeView
+    redirect.push({ path: "/" });
+
+  } catch (error) {
+    alert(error)
+  }
+};
 </script>
 
 <style></style>
