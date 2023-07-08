@@ -25,9 +25,7 @@
   const location = ref(null);
   const bio = ref(null);
 
-
- 
-
+  
   async function getProfile() {
     await userStore.fetchUser();
     username.value = userStore.profile.full_name;

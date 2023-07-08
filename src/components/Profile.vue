@@ -54,7 +54,7 @@ const updateProfile = async () => {
     .from("profiles")
     .update(updatedProfile)
     .eq("user_id", supabase.auth.user().id);
-    editToggleProfile()
+    editToggleProfile();
   if (error) {
     console.error(error);
   } else {
