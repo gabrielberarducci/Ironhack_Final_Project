@@ -4,7 +4,20 @@
 
   <div class="container">
     <h3 class="header-title">Log In to ToDo App</h3>
-    
+
+    <form @submit.prevent="signIn">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input class="form-control" aria-describedby="emailHelp" type="email" placeholder="example@gmail.com" id="email" v-model="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" placeholder="**********" id="password" v-model="password"  required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!--     
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
@@ -30,14 +43,10 @@
           />
         </div>
         <button class="button" type="submit">Sign In</button>
-
-        
       </div>
-    </form>
-
+    </form> -->
     <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
   </div>
-
 </template>
 
 <script setup>
