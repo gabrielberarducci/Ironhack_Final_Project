@@ -1,9 +1,8 @@
 <!-- COMPONENTE BOILERPLATE -->
  
   <template>
-
   <div class="container">
-    <h3 class="header-title">Log In to ToDo App</h3>
+    <img src="../assets/img/logo.png" alt="">
     <div class="d-flex justify-content-center">
       <form @submit.prevent="signIn">
         <div class="mb-3">
@@ -103,6 +102,10 @@ const signIn = async () => {
 </script>
 
 <style>
+{
+  background-color: blue;
+}
+
 .without-account {
   padding-top: 1.5rem;
 }
