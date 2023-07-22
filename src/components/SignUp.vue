@@ -48,7 +48,6 @@
         </div>
       </div>
     </div>
-    <div v-show="errorMsg">{{errorMsg}}</div>
   </section>
   <!-- Section: Design Block -->
 
@@ -155,20 +154,27 @@ const signUp = async () => {
     } catch (error) {
       // displays error message
       errorMsg.value = error.message;
+      Swal.fire({
+        icon: 'error',
+        title: 'Something went Wrong!',
+        text: 'Error: ' + errorMsg.value, 
+      })
       // hides error message
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);
     }
     return;
-  } else
-  Swal.fire({
-  icon: 'error',
-  title: 'Passwords are not the same',
-  text: 'Please Try again...',
-  showConfirmButton: false,
-  timer: 2000
-})
+  } else {
+    errorMsg.value = 'hola';
+    Swal.fire({
+      icon: 'error',
+      title: 'Passwords are not the same',
+      text: 'Please Try again...',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
   errorMsg.value = "error";
 };
 </script>
