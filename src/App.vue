@@ -37,4 +37,8 @@ onMounted(async () => {
 });
 </script>
 
-<style></style>
+<style>
+div {
+  /* background-color: rgb(4, 20, 36); */
+}
+</style>

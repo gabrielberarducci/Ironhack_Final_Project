@@ -106,7 +106,6 @@ const uploadFile = async () => {
 };
 
 const userStore = useUserStore();
-
 const loading = ref(false);
 const username = ref(null);
 const website = ref(null);

@@ -1,12 +1,15 @@
 <template>
+  <Nav />
   <div class="wrapper">
-    <Nav />
     <div class="content">
-      <p>La fecha actual es: {{ fechaFormateada }}</p>
-      <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
+      <br><br><br><br>
+      <p>Date: {{ fechaFormateada }}</p>
+      <!-- <h3>Your account:</h3>
+      <router-link to="/account">Account</router-link> -->
     </div>
+    <br><br><br><br>
     <NewTask />
+    <br><br><br><br>
     <h1>Tasks:</h1>
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>

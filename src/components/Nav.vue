@@ -1,6 +1,6 @@
 <template>
-  <nav>
-    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
+  <!-- <nav>
+    <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> 
     <router-link to="/">
       Home
     </router-link>
@@ -21,11 +21,35 @@
           <p>Welcome, {{userEmail}}</p>
         </li>
         <li>
+
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="../assets/img/logo.png" alt="Logo" height="120" class="d-inline-block align-text-top">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link" aria-current="page">Tasks</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/account" class="nav-link">Your Account</router-link>
+        </li>
+        <li class="nav-item">
           <button @click="signOut" class="button">Log out</button>
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
+
 </template>
 
 <script setup>
