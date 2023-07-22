@@ -20,33 +20,32 @@
   <!-- Section: Design Block -->
 <section class="text-center">
   <!-- Background image -->
-  <div class="p-5 bg-image" style="
-        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-        height: 300px;
-        "></div>
+  <div class="p-5 bg-image" style="background-color: rgb(4, 20, 36); height: 400px;">
+    <img src="../assets/img/logo.png" alt="Logo" class="d-inline-block align-text-top" style="width:25rem;">  
+  </div>
   <!-- Background image -->
 
   <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-        margin-top: -100px;
+        margin-top: -30px;
         background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px);
         ">
     <div class="card-body py-5 px-md-5">
-
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
+
           <h2 class="fw-bold mb-5">Sign In</h2>
-          <form>
+          <form @submit.prevent="signIn">
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control" />
+              <input type="email" id="email" v-model="email" required class="form-control" placeholder="example@mail.com" />
               <label class="form-label" for="form3Example3">Email address</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form3Example4" class="form-control" />
+              <input type="password" placeholder="**********" id="password" v-model="password" required class="form-control" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
 
@@ -54,6 +53,7 @@
             <button type="submit" class="btn btn-primary btn-block mb-4">
               Sign In
             </button>
+            <p class="without-account">Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
          </form>
         </div>
       </div>
