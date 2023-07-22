@@ -21,7 +21,7 @@
 <section class="text-center">
   <!-- Background image -->
   <div class="p-5 bg-image" style="background-color: rgb(4, 20, 36); height: 400px;">
-    <img src="../assets/img/logo.png" alt="Logo" class="d-inline-block align-text-top" style="width:25rem;">  
+    <img src="../assets/img/logo.png" alt="Logo" class="d-inline-block align-text-top" style="width:20rem;">  
   </div>
   <!-- Background image -->
 
