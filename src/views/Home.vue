@@ -22,6 +22,7 @@ import Nav from '../components/Nav.vue';
 import NewTask from '../components/NewTask.vue';
 import TaskItem from '../components/TaskItem.vue';
 import { format } from 'date-fns';
+import Swal from 'sweetalert2';
 
 const taskStore = useTaskStore();
 
@@ -43,7 +44,12 @@ onMounted(async () => {
   // Asignar la fecha formateada a la variable fechaFormateada
   fechaFormateada.value = formatoFecha;
   
- 
+  Swal.fire({
+  title: 'Error!',
+  text: 'Do you want to continue',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+  })
 });
 
 

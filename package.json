@@ -13,6 +13,7 @@
     "moment": "^2.29.4",
     "pinia": "^2.0.17",
     "pinia-plugin-persist": "^1.0.0",
+    "sweetalert2": "^11.7.19",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
   },
