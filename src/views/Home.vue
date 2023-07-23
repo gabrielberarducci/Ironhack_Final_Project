@@ -1,16 +1,11 @@
 <template>
   <Nav />
-  <div class="wrapper">
+  <div class="container text-center">
     <div class="content">
-      <br><br><br><br>
-      <p>Date: {{ fechaFormateada }}</p>
-      <!-- <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link> -->
+      <p class="date">{{ fechaFormateada }}</p>
     </div>
-    <br><br><br><br>
-    <NewTask />
-    <br><br><br><br>
-    <h1>Tasks:</h1>
+    <NewTask/>
+    <h2 class="title">My Tasks</h2>
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 </template>
@@ -39,7 +34,7 @@ onMounted(async () => {
   const fecha = new Date();
 
   // Formatear la fecha en el formato deseado (por ejemplo, "8th July 2023")
-  const formatoFecha = format(fecha, "do MMMM yyyy");
+  const formatoFecha = format(fecha, "dd MMMM yyyy  -  HH:mm");
 
   // Asignar la fecha formateada a la variable fechaFormateada
   fechaFormateada.value = formatoFecha;
@@ -50,4 +45,11 @@ onMounted(async () => {
 </script>
 
 
-<style></style>
+<style>
+.date {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  
+}
+</style>

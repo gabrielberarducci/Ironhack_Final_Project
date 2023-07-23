@@ -2,6 +2,7 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import { supabase } from "../supabase";
 import { useUserStore } from "./user";
+import Swal from 'sweetalert2';
 
 export const useTaskStore = defineStore("tasks", () => {
   // Esta tienda utiliza el Composition API
@@ -19,7 +20,6 @@ export const useTaskStore = defineStore("tasks", () => {
 
   // añadir tareas de supabase
   const addTask = async (title, description) => {
-    console.log(useUserStore().user.id);
     const { data, error } = await supabase.from("tasks").insert([
       {
         user_id: useUserStore().user.id,
@@ -28,6 +28,14 @@ export const useTaskStore = defineStore("tasks", () => {
         description: description,
       },
     ]);
+    if (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Something Went Wrong!',
+        text: 'Error: ' + error.message, 
+      })
+      return;
+    }
     await fetchTasks();
   };
 

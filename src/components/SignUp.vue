@@ -1,6 +1,4 @@
 <template>
-
-  <!-- Section: Design Block -->
   <section class="text-center">
     
     <!-- Background image -->
@@ -19,7 +17,6 @@
           <div class="col-lg-8">
             <h2 class="fw-bold mb-5">Sign Up</h2>
             <form @submit.prevent="signUp">
-              <!-- 2 column grid layout with text inputs for the first and last names -->
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="email" v-model="email" required class="form-control" placeholder="example@mail.com" />
@@ -49,67 +46,6 @@
       </div>
     </div>
   </section>
-  <!-- Section: Design Block -->
-
-<!-- 
-  <div class="container">
-
-    <div class="header">
-      <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
-      </div>
-    </div>
-
-    <form @submit.prevent="signUp" class="form-sign-in">
-      <div class="form">
-        <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            id="email"
-            v-model="email"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">Password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="password"
-            v-model="password"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="confirmPassword"
-            v-model="confirmPassword"
-            required
-          />
-        </div>
-        <button class="button" type="submit">Sign Up</button>
-        <p>
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
-      </div>
-    </form>
-
-    <div v-show="errorMsg">{{errorMsg}}</div>
-  </div> -->
 </template>
 
 <script setup>

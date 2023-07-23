@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <!-- <div class="">
     <h3 :class="{ taskComplete: task.is_complete }">{{ task.title }}</h3>
     <h3 :class="{ taskComplete: task.is_complete }">
       {{ task.description }}
@@ -13,6 +13,21 @@
       <input type="text" v-model="description" />
       <button @click="updateTask">Update</button>
     </div>
+  </div> -->
+
+  <div class="card text-bg-light border-primary text-center m-3" style="width: auto;">
+    <div class="card-body">
+      <h5 class="card-title" :class="{ taskComplete: task.is_complete }">{{ task.title }}</h5>
+      <p class="card-text" :class="{ taskComplete: task.is_complete }">{{ task.description }}</p>
+      <button class="btn btn-primary m-1" @click="deleteTask">Delete</button>
+      <button class="btn btn-primary m-1" @click="toggleComplete">Done</button>
+      <button class="btn btn-primary m-1" @click="updateToggle">Edit</button>
+      <div v-if="inputUpdate">
+        <input class="m-2" type="text" :placeholder="task.title" v-model="name" />
+        <input class="m-2" type="text" :placeholder="task.description" v-model="description" />
+        <button class="btn btn-primary" @click="updateTask">Update</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,11 +37,8 @@ import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
-
 const name = ref("");
-
 const description = ref("");
-
 const props = defineProps({
   task: Object,
 });

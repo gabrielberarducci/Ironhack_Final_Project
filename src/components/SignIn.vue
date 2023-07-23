@@ -50,6 +50,7 @@ import PersonalRouter from "./PersonalRouter.vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { ref, reactive} from "vue"
+import Swal from 'sweetalert2';
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "Sign Up";
@@ -69,11 +70,22 @@ const signIn = async () => {
   try {
     // escribir comectario, tarea para casa.
     await useUserStore().signIn(email.value, password.value);
-     // redirects user to the homeView
-    redirect.push({ path: "/" });
-
+    Swal.fire({
+        icon: 'success',
+        title: 'Success', 
+        showConfirmButton: false,
+        timer: 700
+    })
+    setTimeout(() => {
+      // redirects user to the homeView
+      redirect.push({ path: "/" });
+    }, 700);
   } catch (error) {
-    alert(error)
+    Swal.fire({
+        icon: 'error',
+        title: 'Something Went Wrong!',
+        text: 'Error: ' + error.message, 
+      })
   }
 };
 </script>
