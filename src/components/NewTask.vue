@@ -1,5 +1,5 @@
 <template>
-    <button v-if="!newTaskBtn"   @click="addToggle" class="button btn btn-primary btn-block mb-4">
+    <button v-if="!newTaskBtn" @click="addToggle" class="button btn btn-warning  btn-block mt-4 mb-5">
         Create New Task
     </button>     
     <div v-if="newTaskBtn">
@@ -67,7 +67,6 @@ const addTask = async () => {
         addToggle();
     }
 };
-
 </script>
 
 <style></style>

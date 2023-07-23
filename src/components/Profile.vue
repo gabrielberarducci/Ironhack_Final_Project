@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <button @click="editToggleProfile">Edit Profile</button>
+      <button class="btn btn-primary btn-block mb-4" @click="editToggleProfile">Edit Profile</button>
       <form v-if="inputUpdate" class="col-2" action="">
         <label for="">Full name</label>
         <input
@@ -25,7 +25,7 @@
         <label for="">Location</label>
         <input v-model="profile.location" placeholder="Location" type="text" />
 
-        <button type="button" @click="updateProfile">
+        <button class="btn btn-primary btn-block mb-4" type="button" @click="updateProfile">
           Actualizar perfil
         </button>
       </form>

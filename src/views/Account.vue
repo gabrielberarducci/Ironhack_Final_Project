@@ -1,17 +1,18 @@
 <template>
   <Nav />
-  <h1>Name: {{ username }}</h1>
-  <h1>
-    Website: <a target="_blank" :href="website">{{ website }}</a>
-  </h1>
-  <h1>Location: {{ location }}</h1>
-  <h1>Byography: {{ bio }}</h1>
-  <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" />
-  <!-- <form v-if="inputUpdateAvatar" action=""> -->
-    <input @change="fileManager" type="file" />
-    <button @click="uploadFile">Upload File</button>
-  <!-- </form>
-  <button v-if="!inputUpdateAvatar" @click="editToggleAvatar">Change Avatar</button> -->
+  <div>
+    <h3>Name: {{ username }}</h3>
+    <h3>Website: <a target="_blank" :href="website">{{ website }}</a></h3>
+    <h3>Location: {{ location }}</h3>
+    <h3>Byography: {{ bio }}</h3>
+  </div>
+  <div>
+    <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" />
+  </div>
+  <div>
+    <input  @change="fileManager" type="file" />
+    <button class="btn btn-primary btn-block mb-4" @click="uploadFile">Upload File</button>
+  </div>
   <Profile @updateProfileEmit="hundleUpdateProfile" />
 </template>
 
@@ -21,13 +22,18 @@ import { onMounted, ref, toRefs, watch } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
+import Swal from 'sweetalert2';
 
-
-// variables avatar
-
+const userStore = useUserStore();
+const username = ref(null);
+const website = ref(null);
+const location = ref(null);
+const bio = ref(null);
 const file = ref();
 const fileUrl = ref();
 const inputUpdateAvatar = ref(false);
+const avatar_url = ref(null);
+
 
 const editToggleAvatar = () => {
   inputUpdateAvatar.value = !inputUpdateAvatar.value;
@@ -35,8 +41,8 @@ const editToggleAvatar = () => {
 
 const fileManager = (event) => {
   file.value = event.target.files[0];
-  // console.log(event);
-  // console.log(file.value);
+  console.log(event);
+  console.log(file.value);
 };
 
 const hundleUpdateProfile = (updatedProfileData) => {
@@ -48,8 +54,10 @@ const hundleUpdateProfile = (updatedProfileData) => {
 };
 
 const uploadFile = async () => {
-  if (!file.value) return;
-  
+  if (!file.value) {
+    console.log("aqui llego");
+    return;
+  }
   const { data } = await supabase
         .from('profiles')
         .select("avatar_url")
@@ -100,18 +108,15 @@ const uploadFile = async () => {
     return;
   }
   console.log("Profile successfully updated.");
-
+  Swal.fire({
+        icon: 'success',
+        title: 'Success', 
+        showConfirmButton: false,
+        timer: 1000
+    })
   await userStore.fetchUser();
   editToggleAvatar();
 };
-
-const userStore = useUserStore();
-const loading = ref(false);
-const username = ref(null);
-const website = ref(null);
-const avatar_url = ref(null);
-const location = ref(null);
-const bio = ref(null);
 
 async function getProfile() {
   await userStore.fetchUser();
@@ -137,23 +142,11 @@ watch(
 onMounted(() => {
   getProfile();
 });
-
-// async function signOut() {
-//   try {
-//     loading.value = true
-//     let { error } = await supabase.auth.signOut()
-//     if (error) throw error
-//   } catch (error) {
-//     alert(error.message)
-//   } finally {
-//     loading.value = false
-//   }
-// }
 </script>
 
 <style>
 img {
   width: 200px;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 </style>
