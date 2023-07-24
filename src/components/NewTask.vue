@@ -3,12 +3,12 @@
         Create New Task
     </button>     
     <div v-if="newTaskBtn">
-        <h2 class="fw-bold mb-5">Create New Task</h2>
+        <h2 class="fw-bold m-4">Create New Task</h2>
         <div class="form-outline mb-4">
             <input type="text" placeholder="Title" v-model="name"/>
         </div>
         <div class="form-outline mb-4">
-            <textarea type="textarea" rows="3" cols="23" placeholder="Description" v-model="description">
+            <textarea type="textarea" rows="3" cols="auto" placeholder="Description" v-model="description">
             </textarea>
         </div>
         <button @click="addTask" class="button btn btn-primary btn-block mb-4 me-4">

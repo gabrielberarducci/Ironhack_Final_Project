@@ -15,12 +15,12 @@
     </div>
   </div> -->
 
-  <div class="card text-bg-light border-primary text-center m-3" style="width: auto;">
-    <div class="card-body">
-      <h5 class="card-title" :class="{ taskComplete: task.is_complete }">{{ task.title }}</h5>
+  <div class="card text-bg-light border-primary text-center m-3">
+    <div class="card-body p-4">
+      <h4 class="card-title" :class="{ taskComplete: task.is_complete }">{{ task.title }}</h4>
       <p class="card-text" :class="{ taskComplete: task.is_complete }">{{ task.description }}</p>
-      <button class="btn btn-primary m-1" @click="deleteTask">Delete</button>
-      <button class="btn btn-primary m-1" @click="toggleComplete">Done</button>
+      <button class="btn btn-danger m-1 " @click="deleteTask">Delete</button>
+      <button class="btn btn-success m-1" @click="toggleComplete">Done</button>
       <button class="btn btn-primary m-1" @click="updateToggle">Edit</button>
       <div v-if="inputUpdate">
         <input class="m-2" type="text" :placeholder="task.title" v-model="name" />
