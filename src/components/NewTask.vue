@@ -1,22 +1,15 @@
 <template>
-    <button v-if="!newTaskBtn" @click="addToggle" class="button btn btn-warning  btn-block mt-4 mb-5">
+    <button v-if="!newTaskBtn" @click="addToggle" class="button btn btn-warning  btn-block mt-4">
         Create New Task
     </button>     
-    <div v-if="newTaskBtn">
-        <h2 class="fw-bold m-4">Create New Task</h2>
-        <div class="form-outline mb-4">
-            <input type="text" placeholder="Title" v-model="name"/>
-        </div>
-        <div class="form-outline mb-4">
-            <textarea type="textarea" rows="3" cols="auto" placeholder="Description" v-model="description">
-            </textarea>
-        </div>
-        <button @click="addTask" class="button btn btn-primary btn-block mb-4 me-4">
-            Add
-        </button>
-        <button @click="addToggle" class="button btn btn-primary btn-block mb-4">
-            Cancel
-        </button>     
+    <div class="card m-4 p-3" v-if="newTaskBtn">
+        <form>
+            <h2 class="fw-bold m-4">Create New Task</h2>
+            <input class="form-control mb-4" type="text" placeholder="Title" v-model="name"/>
+            <textarea class="form-control mb-4" type="textarea" placeholder="Description" v-model="description"></textarea>
+            <button @click="addTask" class="button btn btn-primary btn-block mb-4 me-4">Add</button>
+            <button @click="addToggle" class="button btn btn-primary btn-block mb-4">Cancel</button> 
+        </form>   
     </div>
 </template>
 

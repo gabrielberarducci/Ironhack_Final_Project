@@ -1,38 +1,13 @@
 <template>
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-  <div class="container-fluid align-items-center">
-    <a class="navbar-brand mt-2 mt-lg-0" href="/">
-      <img src="../assets/img/logo.png" alt="Logo" width="30" height="24" class="img-fluid" style= "height: 50px;
-  width: auto;">
-    </a>
-  
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav nav-underline">
-        <li class="nav-item">
-          <router-link to="/" class="nav-link" aria-current="page">Tasks</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/account" class="nav-link">Your Account</router-link>
-        </li>
-      </ul>
-
-    </div>
-    <button class="button btn btn-primary ms-3" style="height: 3rem;" @click="signOut">Log out</button>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid" style="justify-content: space-around">
     <a class="navbar-brand mt-2 mt-lg-0" href="/">
       <img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style= "height: 50px;
       width: auto;">
     </a>
-
+    <div class="text-light"><p class="date">{{ fechaFormateada }}</p></div>
     <div class="dropdown">
-      <a class="dropdown-toggle" type="button" id="dropdownMenuButton1"      data-bs-toggle="dropdown" aria-expanded="false">
+      <a class="dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         <img :src="avatar_url" alt="Logo" class="img-fluid avatar" style= "height: 50px; width: 50px;">
       </a>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -42,15 +17,15 @@
     </div>
   </div>
 </nav>
-
 </template>
 
 <script setup>
 // import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
-import { onMounted} from "vue";
+import { onMounted, watch} from "vue";
 import { useRouter } from "vue-router";
 import { ref } from 'vue';
+import { format } from 'date-fns';
 
 
 //constant to save a variable that will hold the use router method
@@ -58,6 +33,7 @@ const route = "/";
 const avatar_url = ref(null);
 const userStore = useUserStore();
 const buttonText = "Todo app";
+const fechaFormateada = ref('');
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
 
@@ -87,13 +63,41 @@ async function getAvatar() {
 }
 
 onMounted(() => {
-getAvatar();
+  getAvatar();
+
+  // Obtener la fecha actual
+  const fecha = new Date();
+
+  // Formatear la fecha en el formato deseado (por ejemplo, "8th July 2023")
+  const formatoFecha = format(fecha, "dd MMMM yyyy");
+
+  // Asignar la fecha formateada a la variable fechaFormateada
+  fechaFormateada.value = formatoFecha;
+
 });
+
+watch(
+  () => userStore.profile,
+  (updatedProfileData) => {
+    avatar_url.value = updatedProfileData.avatar_url;
+  },
+  { deep: true }
+);
 
 </script>
 
 <style>
 .avatar {
   border-radius: 50%;
+}
+
+nav {
+  background-color: rgb(4, 20, 36);
+}
+
+.date {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
 }
 </style>

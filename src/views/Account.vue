@@ -1,21 +1,6 @@
 <template>
   <Nav />
-  <!-- <div>
-    <h3>Name: {{ username }}</h3>
-    <h3>Website: <a target="_blank" :href="website">{{ website }}</a></h3>
-    <h3>Location: {{ location }}</h3>
-    <h3>Byography: {{ bio }}</h3>
-  </div>
-  <div>
-    <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" />
-  </div>
-  <div>
-    <input  @change="fileManager" type="file" />
-    <button class="btn btn-primary btn-block mb-4" @click="uploadFile">Upload File</button>
-  </div>
-  <Profile @updateProfileEmit="hundleUpdateProfile" /> -->
-
-  <div class="card justify-content-center m-5 p-2 border-3">
+  <div class="card justify-content-center m-5 p-2 border-3 bg-gradient text-bg-dark" style="background-color: rgb(4, 20, 36);">
     <div class="row g-0">
       <div class="col-md-4">
         <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="img-fluid rounded-start pb-3" >
@@ -36,7 +21,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>

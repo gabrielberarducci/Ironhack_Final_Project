@@ -1,21 +1,5 @@
 <template>
-  <!-- <div class="">
-    <h3 :class="{ taskComplete: task.is_complete }">{{ task.title }}</h3>
-    <h3 :class="{ taskComplete: task.is_complete }">
-      {{ task.description }}
-    </h3>
-
-    <button @click="deleteTask">Delete</button>
-    <button @click="toggleComplete">Complete</button>
-    <button @click="updateToggle">Edit</button>
-    <div v-if="inputUpdate">
-      <input type="text" v-model="name" />
-      <input type="text" v-model="description" />
-      <button @click="updateTask">Update</button>
-    </div>
-  </div> -->
-
-  <div class="card text-bg-light border-primary text-center m-3">
+    <div class="card bg-gradient border-2 text-center m-4">
     <div class="card-body p-4">
       <h4 class="card-title" :class="{ taskComplete: task.is_complete }">{{ task.title }}</h4>
       <p class="card-text" :class="{ taskComplete: task.is_complete }">{{ task.description }}</p>
