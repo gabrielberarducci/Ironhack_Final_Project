@@ -1,6 +1,6 @@
 <template>
   <Nav />
-  <div>
+  <!-- <div>
     <h3>Name: {{ username }}</h3>
     <h3>Website: <a target="_blank" :href="website">{{ website }}</a></h3>
     <h3>Location: {{ location }}</h3>
@@ -13,7 +13,30 @@
     <input  @change="fileManager" type="file" />
     <button class="btn btn-primary btn-block mb-4" @click="uploadFile">Upload File</button>
   </div>
-  <Profile @updateProfileEmit="hundleUpdateProfile" />
+  <Profile @updateProfileEmit="hundleUpdateProfile" /> -->
+
+  <div class="card justify-content-center m-5 p-2 border-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="img-fluid rounded-start pb-3" >
+        <button class="btn btn-primary m-2" @click="editToggleAvatar">Edit Avatar</button>
+          <div v-if="inputUpdateAvatar">
+            <input  @change="fileManager" type="file" />
+            <button class="btn btn-primary btn-block mb-4" @click="uploadFile">Upload File</button>
+          </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title mb-5">{{ username }}</h5>
+          <h6 class="mb-4">Location: {{ location }}</h6>
+          <h6 class="mb-4">Byography: {{ bio }}</h6>
+          <h6 class="mb-4">Website: <a target="_blank" :href="website">{{ website }}</a></h6>
+          <Profile @updateProfileEmit="hundleUpdateProfile" />
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script setup>
@@ -142,11 +165,7 @@ watch(
 onMounted(() => {
   getProfile();
 });
+
 </script>
 
-<style>
-img {
-  width: 200px;
-  border-radius: 100%;
-}
-</style>
+<style></style>
