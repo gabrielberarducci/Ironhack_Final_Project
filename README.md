@@ -1,5 +1,39 @@
-https://readme.so/
-https://www.readme-templates.com/
+
+![Logo](https://ironhack-final-project-theta.vercel.app/assets/logo.3af7e91e.png)
+
+
+# IronHack - Final Project - Task Organizer
+
+This is the final project for the Ironhack Frontend Bootcamp. 
+
+The goal here is to show everything I learnt during the course, using HTML, CSS, and JavaScript along with the framework "VUE".
+
+In this case, I created a ToDo app with some interesting functions.
+For intance: 
+
+- a Login and Singup pages including all the users management behind the scene.
+- a Database for tasks and users information.
+- a Storage for Avatars. 
+
+
+## Authors
+
+- [@gabrielberarducci](https://www.github.com/gabrielberarducci)
+
+
+## 🚀 About Me
+I'm a full stack developer...
+
+
+## Screenshots
+
+![App Login](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true)
+
+![App Home](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%203.png?raw=true)
+
+![App Add New Task](https://raw.githubusercontent.com/gabrielberarducci/Ironhack_Final_Project/main/assets/img/screenshot%202.png)
+
+![App Profile](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%204.png?raw=true)
 
 # Proyect Tracking
 
@@ -37,6 +71,56 @@ https://www.readme-templates.com/
 #### Jueves - 20/07/23
 
 #### Sabado - 22/07/23
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`VITE_SUPABASE_URL`
+
+`VITE_SUPABASE_ANON_KEY`
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Lessons Learned
+
+What did you learn while building this project? What challenges did you face and how did you overcome them?
+
+
+## Tech Stack
+
+**Client:** VUE, Pinia, Bootstrap, Sweetalert2 
+
+**Server:** Vite, Supabase, Vercel
+
+
 
 
 ## Supabase
