@@ -21,6 +21,7 @@
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -30,6 +31,7 @@ import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
 import Swal from 'sweetalert2';
+import Footer from '../components/Footer.vue';
 
 const userStore = useUserStore();
 const username = ref(null);
@@ -57,7 +59,6 @@ const hundleUpdateProfile = (updatedProfileData) => {
   website.value = updatedProfileData.website;
   location.value = updatedProfileData.location;
   bio.value = updatedProfileData.bio;
-  //avatar_url.value = updatedProfileData.avatar_url;
 };
 
 const uploadFile = async () => {

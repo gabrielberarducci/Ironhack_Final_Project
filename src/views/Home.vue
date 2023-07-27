@@ -5,6 +5,7 @@
     <h2 class="fw-bold m-5">My Tasks</h2>
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -13,8 +14,8 @@ import { useTaskStore } from "../stores/task";
 import Nav from '../components/Nav.vue';
 import NewTask from '../components/NewTask.vue';
 import TaskItem from '../components/TaskItem.vue';
-
 import Swal from 'sweetalert2';
+import Footer from '../components/Footer.vue';
 
 const taskStore = useTaskStore();
 
