@@ -102,7 +102,7 @@ const signUp = async () => {
     }
     return;
   } else {
-    errorMsg.value = 'hola';
+    errorMsg.value = 'error';
     Swal.fire({
       icon: 'error',
       title: 'Passwords are not the same',
