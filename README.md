@@ -75,6 +75,7 @@ For intance:
 
 #### Martes - 25/07/23
 
+- Include Sweetalert2 for Messages and Popups - DONE✅
 - Create the Documentation / Readme - DONE✅
 
 #### Jueves - 27/07/23
