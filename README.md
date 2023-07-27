@@ -27,8 +27,7 @@ I'm a full stack developer...
 
 ## Screenshots
 
-<img src="[https://github.com/your_image.png](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true)" alt="App Login" width="100"/>
-![App Login](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true)
+<img src="https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true" alt="App Login" width="100"/>
 
 ![App Home](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%203.png?raw=true)
 
