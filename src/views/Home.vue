@@ -3,7 +3,9 @@
   <div class="container text-center">
     <NewTask/>
     <h2 class="fw-bold m-5">My Tasks</h2>
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+    <div class="grid-container">
+      <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+    </div>
   </div>
   <Footer />
 </template>
@@ -33,4 +35,12 @@ onMounted(async () => {
 </script>
 
 
-<style></style>
+<style>
+.grid-container {
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  grid-auto-rows: auto;
+  grid-gap: 5px;
+}
+</style>

@@ -1,10 +1,10 @@
 <template>
 <div class="footer card text-center text-light">
   <div class="card-body">
-    <a class="navbar-brand mt-2 mt-lg-0" href="/">
-      <img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style= "height: 30px;
+    <router-link to="/" class="navbar-brand mt-2 mt-lg-0">
+      <img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style= "height: 40px;
       width: auto;">
-    </a>
+    </router-link>
     <h5 class="card-title">Task Organizer - ToDo App</h5>
     <p class="card-text">Copyright © 2023 Gabriel Berarducci</p>
   </div>

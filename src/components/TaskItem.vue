@@ -1,5 +1,5 @@
 <template>
-    <div class="card bg-gradient border-2 text-center m-4">
+    <div class="card bg-dark text-light border-2 text-center m-4">
     <div class="card-body p-4">
       <h4 class="card-title" :class="{ taskComplete: task.is_complete }">{{ task.title }}</h4>
       <p class="card-text" :class="{ taskComplete: task.is_complete }">{{ task.description }}</p>

@@ -1,10 +1,10 @@
 <template>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid" style="justify-content: space-around">
-    <a class="navbar-brand mt-2 mt-lg-0" href="/">
+    <router-link to="/" class="navbar-brand mt-2 mt-lg-0">
       <img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style= "height: 50px;
       width: auto;">
-    </a>
+    </router-link>
     <div class="text-light"><p class="date">{{ fechaFormateada }}</p></div>
     <div class="dropdown">
       <a class="dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
