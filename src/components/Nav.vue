@@ -10,9 +10,9 @@
       <a class="dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         <img :src="avatar_url" alt="Logo" class="img-fluid avatar" style= "height: 50px; width: 50px;">
       </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li class="m-2"><router-link to="/account" class="dropdown-item">Profile</router-link></li>
-        <li class="m-2"><a class="dropdown-item" @click="signOut">Log out</a></li>
+      <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+        <li class="p-0"><router-link to="/account" class="dropdown-item">Profile</router-link></li>
+        <li class="p-0"><a class="dropdown-item" @click="signOut">Log out</a></li>
       </ul>
     </div>
   </div>
@@ -99,5 +99,9 @@ nav {
   font-size: 1.5rem;
   font-weight: 900;
   text-align: center;
+}
+
+.dropdown-menu {
+  --bs-dropdown-min-width: 5rem;
 }
 </style>
