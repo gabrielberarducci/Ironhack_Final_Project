@@ -16,6 +16,7 @@ export const useUserStore = defineStore("user", {
         .from('profiles')
         .select()
         .match({ user_id: this.user.id });
+        if (profile) this.profile = profile[0];
       }
     },
 
@@ -28,7 +29,6 @@ export const useUserStore = defineStore("user", {
         throw error;
       }
       if (user) {
-        console.log("entramos a la creacion de la linea en la tabla profiles",user);
         this.user = user;
         const { data: profile, error: profileError } = await supabase
           .from('profiles')
