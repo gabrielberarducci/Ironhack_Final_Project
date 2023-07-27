@@ -8,7 +8,7 @@
     <div class="text-light"><p class="date">{{ fechaFormateada }}</p></div>
     <div class="dropdown">
       <a class="dropdown-toggle text-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img :src="avatar_url" alt="Logo" class="img-fluid avatar" style= "height: 50px; width: 50px;">
+        <img :src="avatar_url" alt="Logo" class="img-fluid avatar" style="width: 50px; height: 50px; object-fit: cover;">
       </a>
       <ul class="dropdown-menu dropdown-menu-right dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
         <li class="p-0"><router-link to="/account" class="dropdown-item">Profile</router-link></li>

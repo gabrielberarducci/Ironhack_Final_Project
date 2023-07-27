@@ -11,7 +11,7 @@
         <input class="form-control" v-model="profile.website" placeholder="Website" type="text" id="web"/>
         <label for="location" class="form-label">Location</label>
         <input class="form-control" v-model="profile.location" placeholder="Location" type="text" id="location" />
-        <button class="btn btn-primary m-3" type="button" @click="updateProfile">Actualizar perfil</button>
+        <button class="btn btn-primary mt-3" type="button" @click="updateProfile">Save Changes</button>
       </form>
     </div>
   </div>
@@ -63,7 +63,6 @@ const updateProfile = async () => {
   } else {
     console.log("Perfil actualizado correctamente");
     emit('updateProfileEmit', updatedProfileData)
-
   }
 
 };

@@ -3,7 +3,7 @@
   <div class="card justify-content-center m-5 p-2 border-3 bg-gradient text-bg-dark" style="background-color: rgb(4, 20, 36);">
     <div class="row g-0">
       <div class="col-md-4">
-        <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="img-fluid rounded-start pb-3" >
+        <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="img-fluid rounded-start pb-3" style="width: 400px; height: 400px; object-fit: cover;">
         <button class="btn btn-primary m-2" @click="editToggleAvatar">Edit Avatar</button>
           <div v-if="inputUpdateAvatar">
             <input  @change="fileManager" type="file" />
@@ -137,10 +137,6 @@ async function getProfile() {
 watch(
   () => userStore.profile,
   (updatedProfileData) => {
-    // username.value = updatedProfileData.full_name;
-    // website.value = updatedProfileData.website;
-    // location.value = updatedProfileData.location;
-    // bio.value = updatedProfileData.bio;
     avatar_url.value = updatedProfileData.avatar_url;
   },
   { deep: true }
