@@ -1,5 +1,5 @@
 
-![Logo](https://ironhack-final-project-theta.vercel.app/assets/logo.3af7e91e.png)
+![Logo](https://ironhack-final-project-theta.vercel.app/assets/logo.3af7e91e.png | width=100)
 
 
 # IronHack - Final Project - Task Organizer
@@ -27,13 +27,13 @@ I'm a full stack developer...
 
 ## Screenshots
 
-![App Login](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true)
+![App Login](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%201.png?raw=true | width=100)
 
-![App Home](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%203.png?raw=true)
+![App Home](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%203.png?raw=true | width=100)
 
-![App Add New Task](https://raw.githubusercontent.com/gabrielberarducci/Ironhack_Final_Project/main/assets/img/screenshot%202.png)
+![App Add New Task](https://raw.githubusercontent.com/gabrielberarducci/Ironhack_Final_Project/main/assets/img/screenshot%202.png | width=100)
 
-![App Profile](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%204.png?raw=true)
+![App Profile](https://github.com/gabrielberarducci/Ironhack_Final_Project/blob/main/assets/img/screenshot%204.png?raw=true | width=100)
 
 # Proyect Tracking
 
