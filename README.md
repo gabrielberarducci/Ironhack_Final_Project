@@ -1,6 +1,10 @@
 
 <img src="https://ironhack-final-project-theta.vercel.app/assets/logo.3af7e91e.png" alt="Logo" width="500"/>
 
+## Web App
+
+- [Visit the App](https://ironhack-final-project-theta.vercel.app/)
+
 # IronHack - Final Project - Task Organizer
 
 This is the final project for the Ironhack Frontend Bootcamp. 
@@ -14,6 +18,9 @@ For intance:
 - a Database for tasks and users information.
 - a Storage for Avatars. 
 
+## Presentation
+
+- [Presentation](https://www.canva.com/design/DAFp5ujyyU0/J72Nwfnc83V1Ko5IBsizGg/view?utm_content=DAFp5ujyyU0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 ## Authors
 
